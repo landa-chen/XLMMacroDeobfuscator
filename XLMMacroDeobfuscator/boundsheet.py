@@ -57,8 +57,11 @@ class Cell:
     @staticmethod
     def parse_cell_addr(cell_addr_str):
         res = Cell._cell_addr_regex.match(cell_addr_str)
+        print("cell_addr_str: %s" % cell_addr_str)
+        print(res)
         if res is not None:
             sheet_name = res.group('sheetname')
+            print(sheet_name)
             sheet_name = sheet_name.strip('\'') if sheet_name is not None else sheet_name
             column = res.group('column')
             row = res.group('row')
